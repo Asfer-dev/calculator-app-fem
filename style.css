@@ -1,0 +1,241 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap');
+
+/* Custom Properties */
+
+:root {
+    /* Colors in themes */
+
+    --fs-numbers: 2rem;
+
+    --fw-bold: 700;
+
+    --ff-primary: 'League Spartan', sans-serif;
+}
+
+/* THEMES */
+
+.dark {
+    --clr-bg-main: hsl(222, 26%, 31%);
+    --clr-bg-pad-toggle: hsl(223, 31%, 20%);
+    --clr-bg-screen: hsl(224, 36%, 15%);
+
+    --clr-key-blue: hsl(225, 21%, 49%);
+    --clr-shadow-blue: hsl(224, 28%, 35%);
+    --clr-hover-blue: hsl(224, 51%, 76%);
+
+    --clr-key-red: hsl(6, 63%, 50%);
+    --clr-shadow-red: hsl(6, 70%, 34%);
+    --clr-hover-red: hsl(6, 93%, 67%);
+
+    --clr-key-light: hsl(30, 25%, 89%);
+    --clr-shadow-light: hsl(28, 16%, 65%);
+    --clr-hover-light: hsl(0, 0%, 100%);
+
+    --clr-text-body: var(--clr-text-light);
+    --clr-text-dark: hsl(221, 14%, 31%);
+    --clr-text-light: hsl(0, 0%, 100%);
+    --clr-text-equals: var(--clr-text-light);
+}
+
+.light {
+    --clr-bg-main: hsl(0, 0%, 90%);
+    --clr-bg-pad-toggle: hsl(0, 5%, 81%);
+    --clr-bg-screen: hsl(0, 0%, 93%);
+
+    --clr-key-blue: hsl(185, 42%, 37%);
+    --clr-shadow-blue: hsl(185, 58%, 25%);
+    --clr-hover-blue: hsl(185, 41%, 56%);
+
+    --clr-key-red: hsl(25, 98%, 40%);
+    --clr-shadow-red: hsl(25, 99%, 27%);
+    --clr-hover-red: hsl(25, 100%, 61%);
+
+    --clr-key-light: hsl(45, 7%, 89%);
+    --clr-shadow-light: hsl(35, 11%, 61%);
+    --clr-hover-light: hsl(0, 0%, 100%);
+
+    --clr-text-body: hsl(0, 0%, 0%);
+    --clr-text-dark: hsl(60, 10%, 19%);
+    --clr-text-light: hsl(0, 0%, 100%);
+    --clr-text-equals: var(--clr-text-light);
+}
+
+.purple {
+    --clr-bg-main: hsl(268, 75%, 9%);
+    --clr-bg-pad-toggle: hsl(268, 71%, 12%);
+    --clr-bg-screen: var(--clr-bg-pad-toggle);
+
+    --clr-key-blue: hsl(281, 89%, 26%);
+    --clr-shadow-blue: hsl(285, 91%, 52%);
+    --clr-hover-blue: hsl(280, 56%, 44%);
+
+    --clr-key-red: hsl(176, 100%, 44%);
+    --clr-shadow-red: hsl(177, 92%, 70%);
+    --clr-hover-red: hsl(177, 100%, 79%);
+
+    --clr-key-light: hsl(268, 47%, 21%);
+    --clr-shadow-light: hsl(290, 70%, 36%);
+    --clr-hover-light: hsl(268, 54%, 44%);
+
+    --clr-text-body: var(--clr-text-dark);
+    --clr-text-dark: hsl(52, 100%, 62%);
+    --clr-text-light: hsl(0, 0%, 100%);
+    --clr-text-equals: hsl(198, 20%, 13%);
+}
+
+/* CSS Reset */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: inherit;
+}
+
+html,
+body {
+    min-height: 100vh;
+}
+
+/* General Styling */
+
+body {
+    background-color: var(--clr-bg-main);
+    font-family: var(--ff-primary);
+    font-weight: var(--fw-bold);
+    color: var(--clr-text-body);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+}
+
+.container {
+    width: min(90vw, 500px);
+    margin-block: 2rem;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.theme-section {
+    display: flex;
+    align-items: flex-end;
+    gap: 1rem;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+.toggle-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.toggle-wrapper p {
+    text-align: center;
+}
+
+#btn-toggle {
+    border: none;
+    grid-column: span 3;
+    background-color: var(--clr-bg-pad-toggle);
+    padding: 0.25rem;
+    margin-top: 0.25rem;
+    border-radius: 0.75rem;
+    width: 50px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#btn-toggle .circle {
+    aspect-ratio: 1;
+    width: 10px;
+    border-radius: 50%;
+    background-color: var(--clr-key-red);
+    transition: transform 300ms;
+}
+
+.screen-body {
+    background-color: var(--clr-bg-screen);
+    text-align: right;
+    font-size: 3rem;
+    padding: 2rem;
+    border-radius: 0.75rem;
+    margin: 2rem 0 1.5rem;
+    overflow: hidden;
+}
+
+.numpad {
+    background-color: var(--clr-bg-pad-toggle);
+    padding: min(1.5rem, 5vw);
+    border-radius: 0.75rem;
+}
+
+.small-keys {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: min(1.5rem, 4vw);
+}
+
+.key {
+    cursor: pointer;
+    border: none;
+    font-size: var(--fs-numbers);
+    color: var(--clr-text-dark);
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    line-height: 1;
+}
+
+.big-keys {
+    margin-top: min(1.5rem, 4vw);
+    display: grid;
+    gap: min(1.5rem, 4vw);
+    grid-template-columns: repeat(2, 1fr);
+}
+
+@media (max-width) {
+    .key {
+        padding-block: 1rem;
+    }
+}
+
+
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+
+/* Utility Classes */
+
+.key-light {
+    background-color: var(--clr-key-light);
+    box-shadow: 0 4px var(--clr-shadow-light);
+}
+.key-light:hover {
+    background-color: var(--clr-hover-light);
+}
+
+.key-blue {
+    background-color: var(--clr-key-blue);
+    box-shadow: 0 4px var(--clr-shadow-blue);
+    color: var(--clr-text-light);
+    font-size: 1.5rem;
+}
+.key-blue:hover {
+    background-color: var(--clr-hover-blue);
+}
+
+.key-red {
+    background-color: var(--clr-key-red);
+    box-shadow: 0 4px var(--clr-shadow-red);
+    color: var(--clr-text-equals);
+    font-size: 1.5rem;
+}
+.key-red:hover {
+    background-color: var(--clr-hover-red);
+}

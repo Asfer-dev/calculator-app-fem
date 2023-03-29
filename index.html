@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Calculator app</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <main>
+    <div class="container">
+      <header>
+        <h1>calc</h1>
+        <div class="theme-section">
+          <p>theme</p>
+          <div class="toggle-wrapper">
+            <p>1</p>
+            <p>2</p>
+            <p>3</p>
+            <button id="btn-toggle">
+              <div class="circle"></div>
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <div class="calc-body">
+        <div class="screen-body">
+          <p class="screen">0</p>
+        </div>
+        <div class="numpad">
+          <div class="small-keys">
+            <button class="key key-light num-key">7</button>
+            <button class="key key-light num-key">8</button>
+            <button class="key key-light num-key">9</button>
+            <button class="key key-blue" id="del-key">DEL</button>
+            <button class="key key-light num-key">4</button>
+            <button class="key key-light num-key">5</button>
+            <button class="key key-light num-key">6</button>
+            <button class="key key-light op-key">+</button>
+            <button class="key key-light num-key">1</button>
+            <button class="key key-light num-key">2</button>
+            <button class="key key-light num-key">3</button>
+            <button class="key key-light op-key">-</button>
+            <button class="key key-light num-key">.</button>
+            <button class="key key-light num-key">0</button>
+            <button class="key key-light op-key">/</button>
+            <button class="key key-light op-key">x</button>
+          </div>
+          <div class="big-keys">
+            <button class="key key-blue" id="reset-key">RESET</button>
+            <button class="key key-red" id="equals-key">=</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+
+  <script src="index.js"></script>
+</body>
+</html>
